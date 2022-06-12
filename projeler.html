@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJELERİM</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        $(document).ready(function(){
+            var projeler=[
+                {
+                    "Projeadi": "Gülen Surat",
+                    "Tarih": "02.11.2022",
+                },
+                {
+                    "Projeadi": "Üniversite Tanıtımı",
+                    "Tarih": "09.11.2022",
+                },
+                {
+                    "Projeadi": "Ders Programı",
+                    "Tarih": "16.11.2022",
+                },
+                {
+                    "Projeadi": "İletişim Bilgileri",
+                    "Tarih": "23.11.2022",
+                }
+                
+            ];
+            var jsonVeri=JSON.stringify(projeler);
+            var veri=JSON.parse(jsonVeri);
+            for(var i=0;i<veri.length;i++){
+            var satir="<tr>";
+            satir+="<td>"+ veri[i].Projeadi +"</td>";
+            satir+="<td>"+ veri[i].Tarih +"</td>";
+            satir+="<tr>";
+                $("#projeListesi").append(satir);
+
+            }
+
+
+        });
+       
+    </script>
+</head>
+<body>
+   <table id="projeListesi"class="table">
+   <tr>
+    <td>Proje Adı:</td>
+    <td>Tarih:</td>
+   </tr>
+</table>
+</body>
+</html>
