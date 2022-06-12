@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
+</head>
+<body>
+
+</body>
+<script >
+var dizi= [
+{
+    "AD":"DOGAC",
+    "SOYAD":"GULACAN",
+    "CINSIYET":"ERKEK",
+    "DOGUMYERI":"ANTALYA",
+    "DOGUMTARIHI":"05.01.2001",
+    "MEDENIDURUMU":"BEKAR",
+    "TELEFON":"05333071844 ",
+   "EPOSTA":"dogacgulacan@gmail.com",
+   "ADRES":"..............................",
+    "YABANCIDILDÜZEYI":"B2 INGILIZCE",
+    "BILGISAYARBECERILERI":"C JAVA PYTHON CSS JS DILLERI",
+    "HOBILER":"FUTBOL OYNAMAK,YUZMEK,",
+ }
+]
+var doc = new jsPDF();
+
+dizi.forEach(function(dizi,i){
+  doc.text(50,10+(i*10),
+  "AD:"+dizi.AD+
+    "SOYAD:"+dizi.SOYAD+
+    "CINSIYET:"+dizi.CINSIYET+
+    "DOGUM YERI:"+dizi.DOGUMYERI+
+    "DOGUM  TARIHI:"+dizi.DOGUMTARIHI+
+    "MEDENI DURUMU:"+dizi.MEDENIDURUMU+
+    "TELEFON:"+dizi.TELEFON+
+    "E-POSTA:"+dizi.EPOSTA+
+    "ADRES:"+dizi.ADRES+
+    "YABANCI DIL DUZEYI:"+dizi.YABANCIDILDÜZEYI+
+    "BILGISAYAR BECERİLERİ:"+dizi.BILGISAYARBECERILERI+
+    "HOBILER:"+dizi.HOBILER
+
+    );
+
+});
+
+doc.save('cv.pdf')
+</script>
+</html>
